@@ -20,6 +20,7 @@ export default function Navbar() {
         <div className={styles.nav_start}>
           <Link href="/">
             <a>
+              {/* <h3>APCMIMS</h3> */}
               <img
                 className={styles.logo}
                 src="/images/logo.png"
@@ -41,35 +42,13 @@ export default function Navbar() {
 
               <li
                 className={
-                  _path == "/job"
-                    ? styles.active_list_item
-                    : styles.nav_start_list_item
-                }
-              >
-                <Link href="/job">
-                  <a className={styles.link}>Need an App?</a>
-                </Link>
-              </li>
-              <li
-                className={
-                  _path == "/projects"
-                    ? styles.active_list_item
-                    : styles.nav_start_list_item
-                }
-              >
-                <Link href="/projects">
-                  <a className={styles.link}>Projects</a>
-                </Link>
-              </li>
-              <li
-                className={
                   _path == "/contact"
                     ? styles.active_list_item
                     : styles.nav_start_list_item
                 }
               >
                 <Link href="/contact">
-                  <a className={styles.link}>Contact Us</a>
+                  <a className={styles.link}>Register</a>
                 </Link>
               </li>
               <li
@@ -80,7 +59,29 @@ export default function Navbar() {
                 }
               >
                 <Link href="/products">
-                  <a className={styles.link}>Products</a>
+                  <a className={styles.link}>Revalidation</a>
+                </Link>
+              </li>
+              <li
+                className={
+                  _path == "/products"
+                    ? styles.active_list_item
+                    : styles.nav_start_list_item
+                }
+              >
+                <Link href="/products">
+                  <a className={styles.link}>Verification</a>
+                </Link>
+              </li>
+              <li
+                className={
+                  _path == "/products"
+                    ? styles.active_list_item
+                    : styles.nav_start_list_item
+                }
+              >
+                <Link href="/products">
+                  <a className={styles.link}>About Us</a>
                 </Link>
               </li>
             </ul>

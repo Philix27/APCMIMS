@@ -6,9 +6,9 @@ export default function Home() {
   return (
     <>
       <Landing
-        title="Musty Philix Inc"
+        title="APC Members"
         imgUrl="images/dark.jpg"
-        subtitle="An agile tech company"
+        subtitle="APC Membership Manager"
       />
       <Objectives />
       <Projects />

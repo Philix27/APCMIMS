@@ -7,8 +7,8 @@ export default function Layout(props) {
   return (
     <>
       <Head>
-        <title>Tech Company</title>
-        <meta name="portfolio" content="Created by Eligbue" />
+        <title>APC Membership</title>
+        <meta name="APCMIMS" content="Created by Eligbue" />
       </Head>
       <Navbar />
       {props.children}
