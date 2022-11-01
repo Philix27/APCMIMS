@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <Landing
         title="APC Members"
-        imgUrl="images/dark.jpg"
+        imgUrl="images/apclogo.jpg"
         subtitle="APC Membership Manager"
       />
       <Objectives />
