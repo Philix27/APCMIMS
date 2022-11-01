@@ -38,6 +38,20 @@ export default function Form3({
         </div>
         <div className="input_box">
           <label htmlFor="occupation" className="label">
+            Date Time
+          </label>
+          <input
+            // type="text"
+            type="date"
+            id="datetime"
+            placeholder="Date"
+            name="datetime"
+            required
+            onChange={handleChange}
+          />
+        </div>
+        <div className="input_box">
+          <label htmlFor="occupation" className="label">
             Occupation
           </label>
           <input
