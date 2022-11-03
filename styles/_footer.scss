@@ -4,52 +4,27 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  padding-bottom: 20px;
-
-  margin: 10px 0 auto;
-  @include tabletSS {
-    padding: 25px 25px;
-  }
-  @include mobileSS {
-    padding: 20px 20px;
-  }
-
-  .list_headers {
-    font-weight: 400;
-    font-size: small;
-  }
-
-  .contact_list {
-    padding: 15px;
-  }
-
+  padding: 10px 0;
   .container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-
-    // background-color: $primaryColor;
-    padding: 20px 50px;
+    // padding: 30px 10px;
+    padding: 50px 0;
+    display: flex;
     justify-content: center;
-    justify-items: center;
-
-    line-height: 1.6;
+    align-items: center;
     bottom: 0;
-    width: 100%;
-    @include tabletSS {
-      grid-template-columns: repeat(2, 1fr);
-      grid-row-gap: 20px;
-      padding: 15px 40px;
-    }
-    @include mobileSS {
-      grid-template-columns: repeat(2, 1fr);
-      grid-row-gap: 20px;
-      padding: 10px 10px;
+    width: 100vw;
+
+    ul {
+      display: flex;
+
+      li {
+        padding: 0 20px;
+      }
     }
   }
 
   .Linka {
-    color: rgb(43, 42, 42);
+    color: $primaryColor;
     font-size: smaller;
     font-weight: 300;
   }

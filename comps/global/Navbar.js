@@ -18,18 +18,13 @@ export default function Navbar() {
         </div>
 
         <div className="nav_start">
-          <Link href="/">
-            <a>
-              {/* <h3>APCMIMS</h3> */}
-              <img
-                className="logo"
-                src="/images/logo.png"
-                width={90}
-                height={45}
-              />
-            </a>
-          </Link>
-          {/* <Image className={styles.logo} src="/images/logo.png" width={90} height={45}/> */}
+          <div>
+            <Link href="/">
+              <a className="logo">
+                <h3>APCMIMS</h3>
+              </a>
+            </Link>
+          </div>
           <div className="nav_bg">
             <ul className="nav_start_list">
               <li
@@ -43,12 +38,10 @@ export default function Navbar() {
               </li>
               <li
                 className={
-                  _path == "/contact"
-                    ? "active_list_item"
-                    : "nav_start_list_item"
+                  _path == "/reg" ? "active_list_item" : "nav_start_list_item"
                 }
               >
-                <Link href="/contact">
+                <Link href="/reg">
                   <a className="link">Registration</a>
                 </Link>
               </li>
@@ -66,13 +59,22 @@ export default function Navbar() {
 
               <li
                 className={
-                  _path == "/registration"
+                  _path == "/contact"
                     ? "active_list_item"
                     : "nav_start_list_item"
                 }
               >
-                <Link href="/registration">
+                <Link href="/contact">
                   <a className="link">Contact Us</a>
+                </Link>
+              </li>
+              <li
+                className={
+                  _path == "/" ? "active_list_item" : "nav_start_list_item"
+                }
+              >
+                <Link href="/">
+                  <a className="link">Login</a>
                 </Link>
               </li>
             </ul>
