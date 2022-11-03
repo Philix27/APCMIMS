@@ -7,7 +7,7 @@ export default function RegistrationPage() {
     <div>
       <Landing
         title="Become an APC Member"
-        imgUrl="images/contact.jpg"
+        imgUrl="/images/bg.jpg"
         subtitle="Follow to the steps to be come a member."
       />
       <div className="registration">
