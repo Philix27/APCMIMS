@@ -70,10 +70,10 @@ export default function Navbar() {
               </li>
               <li
                 className={
-                  _path == "/" ? "active_list_item" : "nav_start_list_item"
+                  _path == "/login" ? "active_list_item" : "nav_start_list_item"
                 }
               >
-                <Link href="/">
+                <Link href="/login">
                   <a className="link">Login</a>
                 </Link>
               </li>

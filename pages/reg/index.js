@@ -10,7 +10,7 @@ export default function RegistrationPage() {
         subtitle="Follow to the steps to be come a member."
       />
       <div className="registration">
-        <a href="/">
+        <a href="/reg/payment">
           <div className="card">
             <img src="/images/pay.jpg" alt="payment" />
             <div className="inner">

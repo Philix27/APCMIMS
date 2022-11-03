@@ -1,16 +1,16 @@
-.registration {
+.payment {
   display: flex;
   align-items: center;
   justify-content: center;
-  //   justify-items: center;
-  //   justify-self: center;
   max-width: 80vw;
   margin: 0 auto;
   padding: 20px 0;
+  padding-top: 90px;
   .card {
     background-color: $secondaryColor;
     color: $primaryColor;
     margin: 20px;
+    height: 60vh;
     border-radius: 10px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     width: 20vw;
