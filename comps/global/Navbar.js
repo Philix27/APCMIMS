@@ -34,24 +34,11 @@ export default function Navbar() {
             <ul className="nav_start_list">
               <li
                 className={
-                  _path == "/registration"
-                    ? "active_list_item"
-                    : "nav_start_list_item"
+                  _path == "/" ? "active_list_item" : "nav_start_list_item"
                 }
               >
-                <Link href="/registration">
-                  <a className="link">Register</a>
-                </Link>
-              </li>
-              <li
-                className={
-                  _path == "/products"
-                    ? "active_list_item"
-                    : "nav_start_list_item"
-                }
-              >
-                <Link href="/products">
-                  <a className="link">Revalidation</a>
+                <Link href="/">
+                  <a className="link">Home</a>
                 </Link>
               </li>
               <li
@@ -62,16 +49,30 @@ export default function Navbar() {
                 }
               >
                 <Link href="/contact">
-                  <a className="link">Verification</a>
+                  <a className="link">Registration</a>
                 </Link>
               </li>
               <li
                 className={
-                  _path == "/#" ? "active_list_item" : "nav_start_list_item"
+                  _path == "/members"
+                    ? "active_list_item"
+                    : "nav_start_list_item"
                 }
               >
-                <Link href="/#">
-                  <a className="link">About Us</a>
+                <Link href="/members">
+                  <a className="link">Members</a>
+                </Link>
+              </li>
+
+              <li
+                className={
+                  _path == "/registration"
+                    ? "active_list_item"
+                    : "nav_start_list_item"
+                }
+              >
+                <Link href="/registration">
+                  <a className="link">Contact Us</a>
                 </Link>
               </li>
             </ul>

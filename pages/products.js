@@ -1,4 +1,4 @@
-import { Landing } from "../comps/globalComps/Landing";
+import { Landing } from "../comps/global/Landing";
 import Products from "../comps/products/";
 
 export default function Home() {

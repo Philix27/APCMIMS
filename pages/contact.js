@@ -14,8 +14,7 @@ import Form4 from "../comps/agents/step4";
 import Form5 from "../comps/agents/step5";
 import { AlertSuccessful } from "../comps/agents/alert";
 import { Circles } from "react-loader-spinner";
-// import { Modal } from "../comps/global/submitModal";
-import { Landing } from "../comps/globalComps/Landing";
+import { Landing } from "../comps/global/Landing";
 
 export default function AddAgentsPage({ title }) {
   const router = useRouter();

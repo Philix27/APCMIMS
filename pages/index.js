@@ -1,6 +1,5 @@
-import { Landing } from "../comps/globalComps/Landing";
-import Objectives from "../comps/globalComps/objectives";
-import Projects from "../comps/projects/projects";
+import { Landing } from "../comps/global/Landing";
+import Objectives from "../comps/global/objectives";
 
 export default function Home() {
   return (
@@ -11,7 +10,6 @@ export default function Home() {
         subtitle="APC Membership Manager"
       />
       <Objectives />
-      <Projects />
     </>
   );
 }

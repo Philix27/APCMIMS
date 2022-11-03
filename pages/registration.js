@@ -1,4 +1,4 @@
-import { Landing } from "../comps/globalComps/Landing";
+import { Landing } from "../comps/global/Landing";
 import { motion } from "framer-motion";
 
 export default function Registration() {
