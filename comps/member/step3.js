@@ -19,33 +19,33 @@ export default function Form3({
       transition={{ duration: 1.7, delay: 1, type: "tween" }}
     >
       <form onSubmit={handleNext} className="form">
-        <h2>
-          Step 3<span> INEC Voter Reg.</span>
-        </h2>
+        <h2>Step 3{/* <span> INEC Voter Reg.</span> */}</h2>
         <div className="input_box">
           <label htmlFor="form-reg-id" className="label">
-            ID
+            INEC Voter Reg.
           </label>
           <input
             type="text"
             id="form-reg-id"
             placeholder="Enter Voters Reg"
-            name="polling_unit"
+            name="votersRegNo"
+            value={agent.votersRegNo}
             required
-            minLength={3}
+            // minLength={3}
             onChange={handleChange}
           />
         </div>
         <div className="input_box">
-          <label htmlFor="occupation" className="label">
+          <label htmlFor="dateOfBirth" className="label">
             Date of Birth
           </label>
           <input
             // type="text"
             type="date"
-            id="datetime"
+            id="dateOfBirth"
             placeholder="Date"
-            name="datetime"
+            name="dateOfBirth"
+            value={agent.dateOfBirth}
             required
             onChange={handleChange}
           />
@@ -65,15 +65,17 @@ export default function Form3({
           />
         </div>
         <div className="input_box">
-          <label htmlFor="form-election-type">Marital Status</label>
+          <label htmlFor="maritalStatus">Marital Status</label>
           <select
-            name="agentType"
-            value={agent.agentType}
-            id="form-election-type"
+            name="maritalStatus"
+            value={agent.maritalStatus}
+            id="maritalStatus"
             required
             onChange={handleChange}
           >
-            <option value="single">Single</option>
+            <option value="single" selected>
+              Single
+            </option>
             <option value="married">Married</option>
           </select>
         </div>
@@ -90,7 +92,7 @@ export default function Form3({
             <input
               type="submit"
               value="Next"
-              // onClick={handleNext}
+              onClick={handleNext}
               className="btn"
             />
           </div>

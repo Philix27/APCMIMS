@@ -11,6 +11,7 @@ export default function Form2({
   wards,
   handleNext,
   handlePrev,
+  showNext2,
 }) {
   // console.log("AT Form 2");
 
@@ -87,22 +88,8 @@ export default function Form2({
             })}
           </select>
         </div>
-        {/* <div className="input_box">
-          <label htmlFor="form-polling-unit" className="label">
-            Polling Unit
-          </label>
-          <input
-            type="text"
-            id="form-polling-unit"
-            placeholder="Enter Polling Unit"
-            name="polling_unit"
-            required
-            minLength={3}
-            onChange={handleChange}
-          />
-        </div> */}
         <div className="btnContainer">
-          <div className=" buttons">
+          <div className="buttons">
             <input
               type="submit"
               value="Go Back"
@@ -111,12 +98,14 @@ export default function Form2({
             />
           </div>
           <div className="buttons">
-            <input
-              type="submit"
-              value="Next"
-              //   onClick={handleNext}
-              className="btn"
-            />
+            {showNext2 && (
+              <input
+                type="submit"
+                value="Next"
+                // onClick={handleNext}
+                className="btn"
+              />
+            )}
           </div>
         </div>
       </form>

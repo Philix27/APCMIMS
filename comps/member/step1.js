@@ -1,23 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 export default function Form1({
   agent,
   stepIndex,
   handleChange,
-  data,
-  localGov,
   handleNext,
-  wards,
+  showNext1,
 }) {
   const styleHide = "hide";
   const styleShow = "show";
   const errorMsgs = [];
+
   function validateStep1() {
     if (agent.name || agent.name.length < 10) {
       errorMsgs.push("Name must be more than 10 characters");
     }
   }
+
   return (
     <motion.div
       className={`sect step1 ${stepIndex === 0 ? styleShow : styleHide}`}
@@ -83,13 +83,12 @@ export default function Form1({
           </label>
           <input
             type="number"
-            required
             id="form-phone"
             minLength={11}
             maxLength={15}
-            placeholder="e.g 08101234567"
-            name="phone"
-            value={agent.phone}
+            placeholder="e.g Optional"
+            name="alternatePhone"
+            value={agent.alternatePhone}
             onChange={handleChange}
           />
         </div>
@@ -108,14 +107,16 @@ export default function Form1({
           />
         </div>
         <div className="btnContainer">
-          <div className="buttons">
-            <input
-              type="submit"
-              value="Next"
-              // onClick={handleNext}
-              className="btn"
-            />
-          </div>
+          {showNext1 && (
+            <div className="buttons">
+              <input
+                type="submit"
+                value="Next"
+                // onClick={handleNext}
+                className="btn"
+              />
+            </div>
+          )}
         </div>
       </form>
     </motion.div>

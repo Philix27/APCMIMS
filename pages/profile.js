@@ -4,17 +4,29 @@ import Head from "next/head";
 import AgentsComp from "../comps/member";
 import axios from "axios";
 
-export default function MembersPage({ agentsList }) {
-  //   useEffect(() => {
-  //     if (!fetchUser()) {
-  //       router.push("/");
-  //       // console.log(fetchUser());
-  //     }
-  //   }, []);
+export default function ProfilePage({ agentsList }) {
+  const router = useRouter();
 
-  //   function fetchUser() {
-  //     return JSON.parse(localStorage.getItem("user"));
-  //   }
+  const [user, setUser] = useState({
+    email: "",
+    name: "",
+  });
+
+  const [isUserLoggedIn, setUserLoggedIn] = useState(false);
+
+  useEffect(() => {
+    if (fetchUser()) {
+      setUser(fetchUser()[0]);
+      setUserLoggedIn(true);
+    } else {
+      // setUser();
+      setUserLoggedIn(false);
+    }
+  }, {});
+
+  function fetchUser() {
+    return JSON.parse(localStorage.getItem("user"));
+  }
 
   return (
     <div className="agentsWrapper">
@@ -23,6 +35,7 @@ export default function MembersPage({ agentsList }) {
       </Head>
       <div className="comp">
         <AgentsComp agentsList={agentsList} />
+        {/* <AgentsComp agentsList={agentsList} /> */}
       </div>
     </div>
   );

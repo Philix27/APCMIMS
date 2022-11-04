@@ -11,6 +11,7 @@ import Form2 from "../../comps/member/step2";
 import Form3 from "../../comps/member/step3";
 import Form4 from "../../comps/member/step4";
 import Form5 from "../../comps/member/step5";
+import Form6 from "../../comps/member/step6";
 import { AlertSuccessful } from "../../comps/member/alert";
 import { Circles } from "react-loader-spinner";
 
@@ -39,38 +40,38 @@ export default function AddAgentsPage({ title }) {
   const [showFedConst, setFedCosnt] = useState(false);
   const [showStateConst, setStateConst] = useState(false);
   const [senatorial_district, setSenatorial_district] = useState([]);
+
+  //! Next Buttons
+  const [showNext1, setShowNext1] = useState(false);
+  const [showNext2, setShowNext2] = useState(false);
+  //! Agent
   const [agent, setAgent] = useState({
     name: "",
     email: "",
     phone: "",
+    alternatePhone: 0,
     address: "",
-    state: user.statecode,
+    state: "",
     lga: "",
     ward: "",
-    electionType: "",
-    agentType: "",
-    bankName: "",
-    accountNumber: "",
+    votersRegNo: "",
+    occupation: "",
+    dateOfBirth: "",
+    maritalStatus: "",
     image: "",
     status: "NEW",
   });
 
-  const HOU = "HOUSE OF REPS.";
-  const STAT = "STATE HOUSE OF ASSEMBLY";
-  const SEN = "SENATORIAL";
-  const GUBA = "GUBERNATORIAL";
-  const PRES = "PRESIDENTIAL";
-
   function postAgent(agent) {
-    Axios.post("https://rxedu-api.vercel.app/api/v1/agent", agent)
+    Axios.post("https://rxedu-api.vercel.app/api/v1/member", agent)
       .then((response) => {
         // setIsSuccessful(true);
-        // console.log("Successfully Sent to: ");
+        console.log("Successfully Sent to: ");
         // alert("Successfully Added");
 
         setTimeout(() => {
           setIsSuccessful(false);
-          router.push("/agents");
+          router.push("/members");
         }, 5000);
       })
       .catch((e) => {
@@ -87,6 +88,8 @@ export default function AddAgentsPage({ title }) {
     if (name == "state") {
       setWards([]);
       setLocalGov([]);
+      agent.lga = "";
+      agent.ward = "";
       const selectedState = data.states.filter((_val) => _val.state == value);
 
       setLocalGov(selectedState[0].lga);
@@ -106,50 +109,21 @@ export default function AddAgentsPage({ title }) {
       } else {
         console.log("no file yet");
       }
-    } else if (name == "electionType") {
-      if (value == PRES) {
-        setAgentTypeList([
-          "PRESIDENTIAL",
-          "STATE",
-          "LOCAL GOVERNMENT",
-          "WARD",
-          "POLLING UNIT",
-        ]);
-        setFedCosnt(false);
-        setStateConst(false);
-        setShowSenatorialDistrict(false);
-      } else if (value == HOU) {
-        setFedCosnt(true);
-        setStateConst(false);
-        setShowSenatorialDistrict(false);
-        setAgentTypeList([
-          "HOUSE OF REPS",
-          "LOCAL GOVERNMENT",
-          "WARD",
-          "POLLING UNIT",
-        ]);
-      } else if (value == STAT) {
-        setFedCosnt(false);
-        setStateConst(true);
-        setShowSenatorialDistrict(false);
-        setAgentTypeList(["HOUSE OF ASSEMBLY", "WARD", "POLLING UNIT"]);
-      } else if (value == GUBA) {
-        setFedCosnt(false);
-        setStateConst(false);
-        setShowSenatorialDistrict(false);
-        setAgentTypeList(["STATE", "LOCAL GOVERNMENT", "WARD", "POLLING UNIT"]);
-      } else if (value == SEN) {
-        setFedCosnt(false);
-        setStateConst(false);
-        setShowSenatorialDistrict(true);
-        setAgentTypeList([
-          "SENATORIAL",
-          "LOCAL GOVERNMENT",
-          "WARD",
-          "POLLING UNIT",
-        ]);
-      }
+    } else if (name == "maritalStatus") {
+      value = value.toUpperCase();
     }
+
+    if (agent.name && agent.email && agent.phone && agent.address) {
+      setShowNext1(true);
+    } else {
+      setShowNext1(false);
+    }
+    if (agent.state && agent.lga && agent.ward) {
+      setShowNext2(true);
+    } else {
+      setShowNext2(false);
+    }
+
     setAgent({ ...agent, [name]: value });
     console.log(agent);
   };
@@ -162,7 +136,7 @@ export default function AddAgentsPage({ title }) {
   };
   const handleNext = (e) => {
     e.preventDefault();
-    if (stepIndex < 3) {
+    if (stepIndex <= 4) {
       setStepIndex(stepIndex + 1);
     }
   };
@@ -194,12 +168,14 @@ export default function AddAgentsPage({ title }) {
       agent.state &&
       agent.lga &&
       agent.ward &&
-      agent.status &&
-      agent.agentType
+      agent.votersRegNo &&
+      agent.occupation &&
+      agent.dateOfBirth &&
+      agent.maritalStatus
     ) {
       e.preventDefault();
       console.log("Before Upload");
-      setStepIndex(4);
+      setStepIndex(5);
       uploadImageToFb();
     } else {
       console.log("Something is missing");
@@ -217,6 +193,7 @@ export default function AddAgentsPage({ title }) {
           localGov={localGov}
           handleNext={handleNext}
           wards={wards}
+          showNext1={showNext1}
         />
         <Form2
           agent={agent}
@@ -228,6 +205,7 @@ export default function AddAgentsPage({ title }) {
           wards={wards}
           handlePrev={handlePrev}
           handleNext={handleNext}
+          showNext2={showNext2}
         />
         <Form3
           agent={agent}
@@ -249,6 +227,7 @@ export default function AddAgentsPage({ title }) {
           agentParams={agentParams}
           handleChange={handleChange}
           handlePrev={handlePrev}
+          handleNext={handleNext}
         />
         <Form5
           agent={agent}
@@ -257,6 +236,16 @@ export default function AddAgentsPage({ title }) {
           agentParams={agentParams}
           handleChange={handleChange}
           handlePrev={handlePrev}
+          handleNext={handleNext}
+        />
+        <Form6
+          agent={agent}
+          stepIndex={stepIndex}
+          handleSubmit={handleSubmit}
+          agentParams={agentParams}
+          handleChange={handleChange}
+          handlePrev={handlePrev}
+          handleNext={handleNext}
         />
       </div>
     </div>

@@ -4,7 +4,7 @@ import { FcApproval, FcDisapprove } from "react-icons/fc";
 import { useState } from "react";
 import Axios from "axios";
 import { useRouter } from "next/router";
-import { AlertDeleted } from "../../comps/agents/alert";
+import { AlertDeleted } from "./alert";
 import { Modal } from "../global/Modal";
 import AgentModalContent from "./modalContent";
 
@@ -27,7 +27,7 @@ export default function AgentsComp({ agentsList }) {
   };
 
   const onDelete = (agent) => {
-    Axios.delete(`https://rxedu-api.vercel.app/api/v1/agent/${agent._id}`)
+    Axios.delete(`https://rxedu-api.vercel.app/api/v1/member/${agent._id}`)
       .then((response) => {
         setIsSuccessful(true);
         alert("Deleted Successfully");
@@ -53,14 +53,14 @@ export default function AgentsComp({ agentsList }) {
   return (
     <div className=" agentsList">
       {/* <div className="successDiv"> {isSuccessful && <AlertDeleted />}</div> */}
-      {showModal && (
+      {/* {showModal && (
         <Modal
           showModal={showModal}
           setShowModal={setShowModal}
           title="Hula Agen"
           children={<AgentModalContent agent={clickedAgent} />}
         />
-      )}
+      )} */}
       <div className="tableSection">
         <br />
         <br />
@@ -82,15 +82,12 @@ export default function AgentsComp({ agentsList }) {
               <th>Email</th>
               <th>State</th>
               <th>LGA</th>
-              <th>Election </th>
-              <th>Agent</th>
               <th>Delete</th>
             </tr>
           </thead>
           <tbody>
             {agts.map((agent, index) => (
               <tr key={index}>
-                {/* <tr key={index} onClick={setShowModal(true)}> */}
                 <td>{index + 1}.</td>
                 <td onClick={() => _showModal(agent)}>
                   <img src={agent.image} alt={agent.name}></img>
@@ -99,9 +96,6 @@ export default function AgentsComp({ agentsList }) {
                 <td>{agent.email}</td>
                 <td>{agent.state}</td>
                 <td>{agent.lga}</td>
-                <td>{agent.electionType}</td>
-                <td>{agent.agentType}</td>
-
                 <td>
                   <a onClick={() => onDelete(agent)}>
                     <AiFillDelete className="red icon" />
