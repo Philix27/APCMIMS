@@ -1,5 +1,9 @@
 .contactUs {
-  background-color: $secondaryColor;
+  // background-color: $secondaryColor;
   border-radius: 15px;
-  // color: #fff;
+  .sect {
+    background-color: $secondaryColor;
+    padding: 20px;
+    border-radius: 15px;
+  }
 }

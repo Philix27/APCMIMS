@@ -38,7 +38,7 @@ export default function Form3({
         </div>
         <div className="input_box">
           <label htmlFor="occupation" className="label">
-            Date Time
+            Date of Birth
           </label>
           <input
             // type="text"

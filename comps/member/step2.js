@@ -13,7 +13,7 @@ export default function Form2({
   handlePrev,
 }) {
   // console.log("AT Form 2");
-  
+
   const styleHide = "hide";
   const styleShow = "show";
 
@@ -30,7 +30,7 @@ export default function Form2({
         </h2>
         <div className="input_box">
           <label htmlFor="form-state">State</label>
-          {/* <select
+          <select
             name="state"
             onChange={handleChange}
             value={agent.state}
@@ -46,7 +46,7 @@ export default function Form2({
                 </option>
               );
             })}
-          </select> */}
+          </select>
         </div>
         <div className="input_box">
           <label htmlFor="form-lga">LGA</label>

@@ -1,5 +1,6 @@
 import { Landing } from "../comps/global/Landing";
 import Objectives from "../comps/global/objectives";
+import Projects from "../comps/projects/projects";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
         opacity={0.45}
       />
       <Objectives />
+      <Projects />
     </>
   );
 }

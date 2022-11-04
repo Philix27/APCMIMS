@@ -4,7 +4,7 @@ import { FcApproval, FcDisapprove } from "react-icons/fc";
 import { useState } from "react";
 import Axios from "axios";
 import { useRouter } from "next/router";
-import { AlertDeleted } from "../../comps/agents/alert";
+import { AlertDeleted } from "../../comps/member/alert";
 import { Modal } from "../global/Modal";
 import AgentModalContent from "./modalContent";
 

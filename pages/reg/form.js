@@ -6,12 +6,12 @@ import { agentParams } from "../../constants/agentparams";
 import { storage } from "../../utils/firebase";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { v4 } from "uuid";
-import Form1 from "../../comps/agents/step1";
-import Form2 from "../../comps/agents/step2";
-import Form3 from "../../comps/agents/step3";
-import Form4 from "../../comps/agents/step4";
-import Form5 from "../../comps/agents/step5";
-import { AlertSuccessful } from "../../comps/agents/alert";
+import Form1 from "../../comps/member/step1";
+import Form2 from "../../comps/member/step2";
+import Form3 from "../../comps/member/step3";
+import Form4 from "../../comps/member/step4";
+import Form5 from "../../comps/member/step5";
+import { AlertSuccessful } from "../../comps/member/alert";
 import { Circles } from "react-loader-spinner";
 
 export default function AddAgentsPage({ title }) {
