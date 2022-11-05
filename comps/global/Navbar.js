@@ -47,18 +47,6 @@ export default function Navbar() {
               </li>
               <li
                 className={
-                  _path == "/members"
-                    ? "active_list_item"
-                    : "nav_start_list_item"
-                }
-              >
-                <Link href="/members">
-                  <a className="link">Members</a>
-                </Link>
-              </li>
-
-              <li
-                className={
                   _path == "/contact"
                     ? "active_list_item"
                     : "nav_start_list_item"
@@ -75,6 +63,15 @@ export default function Navbar() {
               >
                 <Link href="/login">
                   <a className="link">Login</a>
+                </Link>
+              </li>
+              <li
+                className={
+                  _path == "/admin" ? "active_list_item" : "nav_start_list_item"
+                }
+              >
+                <Link href="/admin">
+                  <a className="link">Admin</a>
                 </Link>
               </li>
             </ul>

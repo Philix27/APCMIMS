@@ -1,13 +1,13 @@
 export const projects = [
   {
-    title: "APC Data Capture",
+    title: "APC Campaign",
     group: "mobile",
     detailsPage: "/projects/mim",
     description: `
     This is a data capture application. 
     Used to store data of agents in all sectors for the APC Party.
     `,
-    image: "/images/apc/apc.png",
+    image: "/images/project/bioplus.jpg",
     tags: ["Dart", "Flutter", "Firebase"],
     source: "#",
     visit: "#",

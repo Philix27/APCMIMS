@@ -8,11 +8,11 @@ export default function Home() {
       <Landing
         title="APC Members"
         imgUrl="images/bg.jpg"
-        subtitle="APC Membership Manager"
+        subtitle="JUSTICE, PEACE & UNITY"
         opacity={0.45}
       />
       <Objectives />
-      <Projects />
+      {/* <Projects /> */}
     </>
   );
 }

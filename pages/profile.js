@@ -31,7 +31,7 @@ export default function ProfilePage({ agentsList }) {
   return (
     <div className="agentsWrapper">
       <Head>
-        <title>APCMIMS | Members</title>
+        <title>APCMIMS | Profile</title>
       </Head>
       <div className="comp">
         <AgentsComp agentsList={agentsList} />
