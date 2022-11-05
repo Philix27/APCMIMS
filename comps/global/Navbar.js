@@ -1,82 +1,72 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-// import styles from "./Navbar.module.css";
+import Image from "next/image";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function Navbar() {
   const router = useRouter();
   const _path = router.pathname;
+  const show = "show";
+  const [showNav, setShowNav] = useState(false);
   return (
     <>
-      <div className="navbar">
-        <input type="checkbox" id="check" className="check" />
-        <div className="bars">
-          <label htmlFor="check">
-            <FaBars />
-          </label>
-        </div>
-
-        <div className="nav_start">
-          <div>
+      <div className="navbar ">
+        <Link href="/">
+          <label className="logo">APCMIMS</label>
+          <Image
+            className="logo"
+            src="/images/logo.png"
+            height={40}
+            width={50}
+          />
+        </Link>
+        <label className="brand">APCMIMS</label>
+        <ul className={showNav ? "show" : ""}>
+          <li
+            className={_path == "/" ? "active" : ""}
+            onClick={() => setShowNav(!showNav)}
+          >
             <Link href="/">
-              <a className="logo">
-                <h3>APCMIMS</h3>
-              </a>
+              <a>Home</a>
             </Link>
-          </div>
-          <div className="nav_bg">
-            <ul className="nav_start_list">
-              <li
-                className={
-                  _path == "/" ? "active_list_item" : "nav_start_list_item"
-                }
-              >
-                <Link href="/">
-                  <a className="link">Home</a>
-                </Link>
-              </li>
-              <li
-                className={
-                  _path == "/reg" ? "active_list_item" : "nav_start_list_item"
-                }
-              >
-                <Link href="/reg">
-                  <a className="link">Registration</a>
-                </Link>
-              </li>
-              <li
-                className={
-                  _path == "/contact"
-                    ? "active_list_item"
-                    : "nav_start_list_item"
-                }
-              >
-                <Link href="/contact">
-                  <a className="link">Contact Us</a>
-                </Link>
-              </li>
-              <li
-                className={
-                  _path == "/login" ? "active_list_item" : "nav_start_list_item"
-                }
-              >
-                <Link href="/login">
-                  <a className="link">Login</a>
-                </Link>
-              </li>
-              <li
-                className={
-                  _path == "/admin" ? "active_list_item" : "nav_start_list_item"
-                }
-              >
-                <Link href="/admin">
-                  <a className="link">Admin</a>
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
+          </li>
+          <li
+            onClick={() => setShowNav(!showNav)}
+            className={_path == "/reg" ? "active" : ""}
+          >
+            <Link href="/reg">
+              <a>Registration</a>
+            </Link>
+          </li>
+          <li
+            onClick={() => setShowNav(!showNav)}
+            className={_path == "/contact" ? "active" : ""}
+          >
+            <Link href="/contact">
+              <a>Contact</a>
+            </Link>
+          </li>
+          <li
+            onClick={() => setShowNav(!showNav)}
+            className={_path == "/login" ? "active" : ""}
+          >
+            <Link href="/login">
+              <a>Login</a>
+            </Link>
+          </li>
+          <li
+            onClick={() => setShowNav(!showNav)}
+            className={_path == "/admin" ? "active" : ""}
+          >
+            <Link href="/admin">
+              <a>Admin</a>
+            </Link>
+          </li>
+        </ul>
+        <label className="icon">
+          <FaBars onClick={() => setShowNav(!showNav)} />
+        </label>
       </div>
     </>
   );

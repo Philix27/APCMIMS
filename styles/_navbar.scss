@@ -1,158 +1,108 @@
 .navbar {
-  background-color: rgba(4, 9, 30, 0.216);
-  padding-left: 10px;
-  height: 50px;
+  background-color: $secondaryColor;
+  color: $primaryColor;
   width: 100%;
-  display: flex;
-  align-items: center;
+  height: 50px;
   z-index: 2;
   position: fixed;
   top: 0;
-
-  .nav_start {
-    display: flex;
+  .show {
+    left: 0;
+  }
+  label.brand {
+    font-size: larger;
+    font-weight: bold;
+    line-height: 50px;
+    // margin-left: 40px;
+    @include laptop {
+      // font-size: medium;
+      // padding-left: 40px;
+    }
+  }
+  label.logo {
+    // line-height: 50px;
+    margin-left: 40px;
+    // object-fit: fill;
     width: 100%;
-    padding-left: 20px;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    @include laptop {
+      padding-left: 40px;
+    }
+  }
+
+  ul {
+    float: right;
     margin-right: 40px;
-    /* mar  */
-  }
-
-  .nav_bg {
-    position: absolute;
-    right: 0;
-    align-content: right;
-    @include mobileSS {
+    @include laptop {
+      margin-right: 20px;
+    }
+    @include tabletSS {
       position: fixed;
-      top: 0;
-      visibility: collapse;
-      left: 50%;
+      width: 100%;
+      height: 300px;
+      background-color: $primaryColor;
       color: #fff;
+      top: 50px;
+      text-align: center;
+      left: -100%;
+      transition: all 0.5s;
+    }
+
+    li {
+      display: inline-block;
+      line-height: 50px;
+      @include tabletSS {
+        display: block;
+        margin: 20px;
+        line-height: 30px;
+      }
+      &:hover {
+        background-color: $primaryColor;
+        color: #fff;
+        transition: 0.5s;
+        @include tabletSS {
+          color: $primaryColor;
+          background-color: $secondaryColor;
+        }
+      }
+      a {
+        font-size: medium;
+        color: $primaryColor;
+        text-transform: uppercase;
+        margin: 0 20px;
+        &:hover {
+          color: #fff;
+        }
+        @include tabletSS {
+          color: #fff;
+        }
+      }
+    }
+    li.active {
       background-color: $primaryColor;
-      width: 50%;
-      height: 100%;
-      margin: 0;
-      transition: all 0.5s ease-in-out;
-      transform: translateX(-500px);
+      color: #fff;
+      transition: 0.5s;
+      a {
+        color: #fff;
+      }
     }
   }
-  .nav_start_list {
-    display: flex;
-    color: #fff;
-    white-space: nowrap;
-    @include mobileSS {
-      display: block;
-      font-size: 1.2rem;
-      padding: 30px 0;
-      color: $primaryColor;
-      border-right: #eee 1px solid;
-    }
-  }
-
-  .nav_end {
-    color: #fff;
-    @include mobileSS {
-      display: none;
-    }
-  }
-
-  .nav_end_list {
-    display: flex;
-  }
-
-  .check {
-    display: none;
-    position: absolute;
-  }
-
-  .logo {
-    margin-left: 10px;
-    color: #fff;
-  }
-
-  .link {
-    padding: 0 10px;
-    color: #fff;
-  }
-
-  .bars,
-  .bars_close {
-    display: none;
+  label.icon {
+    color: $primaryColor;
+    font-size: medium;
+    line-height: 50px;
+    float: right;
+    margin-right: 40px;
     cursor: pointer;
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: #fff;
-    font-size: 1.5rem;
-  }
+    display: none;
 
-  .nav_start_list_item {
-    padding: 15px 10px;
-    &:hover {
-      background-color: $primaryColor;
-      // color: $primaryColor;
-      padding: 15px 12px;
+    @include tabletSS {
+      display: block;
     }
     @include mobileSS {
-      padding-top: 15px;
-      padding-bottom: 5px;
-      border-bottom: #ccc solid 1px;
-      margin-right: 50px;
-      margin-left: 20px;
-      &:last-child {
-        border-bottom: 0;
-      }
-      &:first-child {
-        border-bottom: 0;
-      }
-    }
-  }
-
-  .active_list_item {
-    background-color: $primaryColor;
-    padding: 15px 12px;
-  }
-
-  @media (max-width: 700px) {
-    .bars {
-      display: block;
-    }
-    .bars_close {
-      display: block;
-      position: absolute;
-      top: 20px;
-      left: 20px;
-    }
-
-    .bars:hover {
-      opacity: 0.5;
-    }
-
-    .bars_close:hover {
-      opacity: 0.5;
-    }
-
-    .check:checked ~ * .nav_bg {
       visibility: visible;
-      transition: all 0.5s ease-in-out;
-      transform: translateX(50px);
-    }
-  }
-
-  @media (max-width: 500px) {
-    .img {
-      display: none;
-    }
-
-    .nav_start_list {
-      flex-direction: column;
-    }
-
-    .bars {
-      display: block;
-    }
-
-    .bars:hover {
-      opacity: 0.5;
     }
   }
 }

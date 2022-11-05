@@ -1,6 +1,6 @@
-@import 'colors';
-@import 'variables';
-@import 'screensize';
+@import "colors";
+@import "variables";
+@import "screensize";
 
 .sectionTitle {
   font-weight: f-weight(bold);
@@ -8,18 +8,17 @@
   line-height: 72px;
   width: max-content;
   max-width: 100%;
-  color: $bigFontColor;
+  color: $primaryColor;
   margin-bottom: 16px;
 
-  @include tabletSS{
-      font-size: f-size(medium);
-      line-height: 65px;
-    }
-  @include mobileSS{
+  @include tabletSS {
+    font-size: f-size(medium);
+    line-height: 65px;
+  }
+  @include mobileSS {
     font-size: f-size(small);
     line-height: 50px;
   }
- 
 }
 .sectionJumbotron {
   max-width: 800px;
@@ -36,7 +35,7 @@
     padding-bottom: 24px;
   }
 
-   @include mobileSS {
+  @include mobileSS {
     font-size: 18px;
     line-height: 24px;
     padding-bottom: 16px;
@@ -51,14 +50,14 @@
   // padding-bottom: 3.6rem;
   /* color: rgba(255, 255, 255, 0.5); */
 
-   @include tabletSS  {
+  @include tabletSS {
     max-width: 670px;
     font-size: 16px;
     line-height: 30px;
     // padding-bottom: 24px;
   }
 
-  @include mobileSS  {
+  @include mobileSS {
     font-size: 14px;
     line-height: 20px;
     // padding-bottom: 16px;
@@ -72,14 +71,14 @@
   // padding-bottom: 3.6rem;
   /* color: rgba(255, 255, 255, 0.5); */
 
-   @include tabletSS  {
+  @include tabletSS {
     max-width: 670px;
     font-size: 13px;
     line-height: 30px;
     // padding-bottom: 24px;
   }
 
-  @include mobileSS  {
+  @include mobileSS {
     font-size: 11px;
     line-height: 20px;
     // padding-bottom: 16px;
