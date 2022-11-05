@@ -1,4 +1,5 @@
 .admin {
+  min-height: 80vh;
   width: 100%;
   padding: 80px 60px 60px 60px;
   @include mobileSS {
@@ -32,4 +33,7 @@
       }
     }
   }
+  // .spacer {
+  //   height: 100%;
+  // }
 }
