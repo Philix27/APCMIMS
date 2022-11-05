@@ -7,9 +7,11 @@ export default function Objectives() {
       <div>
         <div>
           <div className="sectionJumbotron">
-            We help you focus on your ideas and business by developing a clean
-            and fast application (website, desktop and mobile apps) for your
-            brand.
+            A membership card helps every member to promote the objectives and
+            communicate to others the advantages of belonging. Whether
+            membership is required or voluntary, each member becomes an
+            ambassador with his or her ID card in hand. Helping Associations
+            with members all around the country promoting the party.
           </div>
         </div>
       </div>
