@@ -9,6 +9,7 @@ export default function Layout(props) {
       <Head>
         <title>APC Membership</title>
         <meta name="APCMIMS" content="Created by Eligbue" />
+        <link rel="icon" href="/images/logo.png" />
       </Head>
       <Navbar />
       {props.children}
