@@ -2,10 +2,13 @@
   .sect {
     background-color: $secondaryColor;
     box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
-    padding: 10px 15px;
+    padding: 15px;
     border-radius: 20px;
     margin-top: 30px;
-    width: 85%;
+    width: 50%;
+    @include mobileSS {
+      width: 90%;
+    }
     h2 {
       font-size: 2rem;
       span {
@@ -16,7 +19,6 @@
     }
     .btnContainer {
       width: 400px;
-
       display: flex;
       @include mobileSS {
         width: 100%;
