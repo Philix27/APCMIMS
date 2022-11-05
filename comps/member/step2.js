@@ -98,14 +98,21 @@ export default function Form2({
             />
           </div>
           <div className="buttons">
-            {showNext2 && (
+            <input
+              type="submit"
+              value="Next"
+              // onClick={handleNext}
+              className="btn"
+            />
+
+            {/* {showNext2 && (
               <input
                 type="submit"
                 value="Next"
                 // onClick={handleNext}
                 className="btn"
               />
-            )}
+            )} */}
           </div>
         </div>
       </form>

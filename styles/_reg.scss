@@ -2,19 +2,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  //   justify-items: center;
-  //   justify-self: center;
   max-width: 80vw;
   margin: 0 auto;
   padding: 20px 0;
+  @include mobileSS {
+    display: grid;
+    // width: 80%;
+    // padding: 0 15px;
+  }
   .card {
     background-color: $secondaryColor;
     color: $primaryColor;
     margin: 20px;
     border-radius: 10px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    width: 20vw;
+    width: 30vw;
     cursor: pointer;
+    @include mobileSS {
+      width: 100%;
+      margin: 20px 0px;
+    }
     &:hover {
       box-shadow: 0 5px 10px rgba(96, 95, 95, 0.8);
     }

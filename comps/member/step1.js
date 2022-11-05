@@ -107,7 +107,16 @@ export default function Form1({
           />
         </div>
         <div className="btnContainer">
-          {showNext1 && (
+          <div className="buttons">
+            <input
+              type="submit"
+              value="Next"
+              // onClick={handleNext}
+              className="btn"
+            />
+          </div>
+
+          {/* {showNext1 && (
             <div className="buttons">
               <input
                 type="submit"
@@ -116,7 +125,7 @@ export default function Form1({
                 className="btn"
               />
             </div>
-          )}
+          )} */}
         </div>
       </form>
     </motion.div>

@@ -1,13 +1,11 @@
 .addAgent {
   .sect {
-    // background-color: #fff;
     background-color: $secondaryColor;
-    // box-shadow:  5px 10px rgba(0, 0, 0, 0.2);
     box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
-    padding: 12px 15px;
+    padding: 10px 15px;
     border-radius: 20px;
     margin-top: 30px;
-    // display: none;
+    width: 85%;
     h2 {
       font-size: 2rem;
       span {
@@ -18,8 +16,11 @@
     }
     .btnContainer {
       width: 400px;
-      display: flex;
 
+      display: flex;
+      @include mobileSS {
+        width: 100%;
+      }
       .buttons {
         display: flex;
         max-width: 50%;

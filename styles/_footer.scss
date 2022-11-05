@@ -13,11 +13,13 @@
     justify-content: center;
     align-items: center;
     bottom: 0;
-    width: 100vw;
+    // width: 100vw;
 
     ul {
       display: flex;
-
+      @include mobileSS {
+        flex-direction: column;
+      }
       li {
         padding: 0 20px;
       }
