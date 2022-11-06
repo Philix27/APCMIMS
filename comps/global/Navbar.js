@@ -62,7 +62,11 @@ export default function Navbar() {
           </li>
         </ul>
         <label className="icon">
-          <FaBars onClick={() => setShowNav(!showNav)} />
+          {showNav ? (
+            <FaTimes onClick={() => setShowNav(!showNav)} />
+          ) : (
+            <FaBars onClick={() => setShowNav(!showNav)} />
+          )}
         </label>
       </div>
     </>
