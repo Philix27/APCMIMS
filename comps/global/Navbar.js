@@ -13,14 +13,12 @@ export default function Navbar() {
     <>
       <div className="navbar ">
         <Link href="/">
-          <Image
-            className="logo"
-            src="/images/logo.png"
-            height={40}
-            width={50}
-          />
+          <img className="logo" src="/images/logo.png" />
         </Link>
+
         <label className="brand">APCMIMS</label>
+        {/* <label className="brand">APCMIMS</label> */}
+
         <ul className={showNav ? "show" : ""}>
           <li
             className={_path == "/" ? "active" : ""}

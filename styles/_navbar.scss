@@ -6,32 +6,35 @@
   z-index: 2;
   position: fixed;
   top: 0;
+  padding-left: 40px;
+  @include mobileSS {
+    padding-left: 20px;
+  }
   .show {
     left: 0;
   }
   label.brand {
     font-size: larger;
     font-weight: bold;
-    line-height: 50px;
+    // line-height: 50px;
+    display: inline-block;
+    position: absolute;
+    top: 15px;
+    // height: 100%;
     // margin-left: 40px;
     @include laptop {
       // font-size: medium;
       // padding-left: 40px;
     }
   }
-  label.logo {
-    // line-height: 50px;
-    margin-left: 40px;
-    // object-fit: fill;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    overflow: hidden;
-    @include laptop {
-      padding-left: 40px;
-    }
-  }
 
+  img {
+    // width: 100%;
+    // height: 35px;
+    width: fit-content;
+    padding: 7.5px 20px 7.5px 10px;
+    height: 100%;
+  }
   ul {
     float: right;
     margin-right: 40px;
@@ -86,6 +89,13 @@
       transition: 0.5s;
       a {
         color: #fff;
+        @include tabletSS {
+          color: $primaryColor;
+        }
+      }
+      @include tabletSS {
+        background-color: $secondaryColor;
+        color: $primaryColor;
       }
     }
   }
