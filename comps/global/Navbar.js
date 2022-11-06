@@ -12,9 +12,9 @@ export default function Navbar() {
   return (
     <>
       <div className="navbar ">
-        <Link href="/">
+        {/* <Link href="/">
           <img className="logo" src="/images/logo.png" />
-        </Link>
+        </Link> */}
 
         <label className="brand">APCMIMS</label>
         {/* <label className="brand">APCMIMS</label> */}
