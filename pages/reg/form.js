@@ -71,7 +71,7 @@ export default function AddAgentsPage({ title }) {
 
         setTimeout(() => {
           setIsSuccessful(false);
-          router.push("/members");
+          router.push("/thanks");
         }, 5000);
       })
       .catch((e) => {
