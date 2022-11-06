@@ -13,7 +13,6 @@ export default function Navbar() {
     <>
       <div className="navbar ">
         <Link href="/">
-          <label className="logo">APCMIMS</label>
           <Image
             className="logo"
             src="/images/logo.png"
