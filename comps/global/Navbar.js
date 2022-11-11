@@ -24,41 +24,31 @@ export default function Navbar() {
             className={_path == "/" ? "active" : ""}
             onClick={() => setShowNav(!showNav)}
           >
-            <Link href="/">
-              <a>Home</a>
-            </Link>
+            <Link href="/">Home</Link>
           </li>
           <li
             onClick={() => setShowNav(!showNav)}
             className={_path == "/reg" ? "active" : ""}
           >
-            <Link href="/reg">
-              <a>Registration</a>
-            </Link>
+            <Link href="/reg">Registration</Link>
           </li>
           <li
             onClick={() => setShowNav(!showNav)}
             className={_path == "/contact" ? "active" : ""}
           >
-            <Link href="/contact">
-              <a>Contact</a>
-            </Link>
+            <Link href="/contact">Contact</Link>
           </li>
           <li
             onClick={() => setShowNav(!showNav)}
             className={_path == "/login" ? "active" : ""}
           >
-            <Link href="/login">
-              <a>Login</a>
-            </Link>
+            <Link href="/login">Login</Link>
           </li>
           <li
             onClick={() => setShowNav(!showNav)}
             className={_path == "/admin" ? "active" : ""}
           >
-            <Link href="/admin">
-              <a>Admin</a>
-            </Link>
+            <Link href="/admin">Admin</Link>
           </li>
         </ul>
         <label className="icon">

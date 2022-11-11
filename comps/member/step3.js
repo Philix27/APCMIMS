@@ -31,6 +31,7 @@ export default function Form3({
             name="votersRegNo"
             value={agent.votersRegNo}
             required
+            maxLength={15}
             // minLength={3}
             onChange={handleChange}
           />
@@ -73,9 +74,7 @@ export default function Form3({
             required
             onChange={handleChange}
           >
-            <option value="single" selected>
-              Single
-            </option>
+            <option value="single">Single</option>
             <option value="married">Married</option>
           </select>
         </div>

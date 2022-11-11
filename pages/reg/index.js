@@ -23,15 +23,13 @@ export default function RegistrationPage() {
           </a>
         </Link> */}
         <Link href="/reg/form">
-          <a>
-            <div className="card">
-              <img src="/images/form.jpg" alt="form" />
-              <div className="inner">
-                <h3>Membership Form</h3>
-                <p>Fill the form.</p>
-              </div>
+          <div className="card">
+            <img src="/images/form.jpg" alt="form" />
+            <div className="inner">
+              <h3>Membership Form</h3>
+              <p>Fill the form.</p>
             </div>
-          </a>
+          </div>
         </Link>
       </div>
     </div>
