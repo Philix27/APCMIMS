@@ -19,6 +19,7 @@ export default function AddAgentsPage({ title }) {
   const router = useRouter();
   const [user, setUser] = useState({
     name: "",
+    name: "",
     email: "",
     password: "",
     phone: "",
@@ -46,7 +47,8 @@ export default function AddAgentsPage({ title }) {
   const [showNext2, setShowNext2] = useState(false);
   //! Agent
   const [agent, setAgent] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     phone: "",
     alternatePhone: 0,
@@ -109,19 +111,6 @@ export default function AddAgentsPage({ title }) {
       } else {
         console.log("no file yet");
       }
-    } else if (name == "maritalStatus") {
-      value = value.toUpperCase();
-    }
-
-    if (agent.name && agent.email && agent.phone && agent.address) {
-      setShowNext1(true);
-    } else {
-      setShowNext1(false);
-    }
-    if (agent.state && agent.lga && agent.ward) {
-      setShowNext2(true);
-    } else {
-      setShowNext2(false);
     }
 
     setAgent({ ...agent, [name]: value });
@@ -161,7 +150,8 @@ export default function AddAgentsPage({ title }) {
 
   const handleSubmit = async (e) => {
     if (
-      agent.name &&
+      agent.firstName &&
+      agent.lastName &&
       agent.email &&
       agent.address &&
       agent.phone &&
@@ -174,6 +164,7 @@ export default function AddAgentsPage({ title }) {
       agent.maritalStatus
     ) {
       e.preventDefault();
+      agent.maritalStatus.toUpperCase();
       console.log("Before Upload");
       setStepIndex(5);
       uploadImageToFb();

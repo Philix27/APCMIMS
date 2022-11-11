@@ -25,7 +25,10 @@ export default function Form5({
 
         <div className="content">
           <h2>
-            Name: <span> {agent.name}</span>
+            Name:
+            <span>
+              {agent.firstName} {agent.lastName}
+            </span>
           </h2>
           <hr />
           <h2>

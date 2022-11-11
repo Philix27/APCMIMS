@@ -31,17 +31,32 @@ export default function Form1({
         </h2>
 
         <div className="input_box">
-          <label htmlFor="form-name" className="label">
-            Name
+          <label htmlFor="form-firstName" className="label">
+            First Name
           </label>
           <input
             type="text"
-            id="form-name"
-            placeholder="Last First Middle "
-            name="name"
+            id="form-firstName"
+            placeholder="First name "
+            name="firstName"
             required
             minLength={5}
-            value={agent.name}
+            value={agent.firstName}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="input_box">
+          <label htmlFor="form-lastName" className="label">
+            Last Name
+          </label>
+          <input
+            type="text"
+            id="form-lastName"
+            placeholder="Last name &  middle name"
+            name="lastName"
+            required
+            minLength={5}
+            value={agent.lastName}
             onChange={handleChange}
           />
         </div>
