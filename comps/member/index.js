@@ -4,9 +4,7 @@ import { FcApproval, FcDisapprove } from "react-icons/fc";
 import { useState } from "react";
 import Axios from "axios";
 import { useRouter } from "next/router";
-import { AlertDeleted } from "./alert";
-import { Modal } from "../global/Modal";
-import AgentModalContent from "./modalContent";
+import Link from "next/link";
 
 export default function AgentsComp({ agentsList }) {
   const [isSuccessful, setIsSuccessful] = useState(false);
@@ -89,8 +87,11 @@ export default function AgentsComp({ agentsList }) {
             {agts.map((agent, index) => (
               <tr key={index}>
                 <td>{index + 1}.</td>
-                <td onClick={() => _showModal(agent)}>
-                  <img src={agent.image} alt={agent.name}></img>
+                {/* <td onClick={() => _showModal(agent)}> */}
+                <td>
+                  <Link key={index} href={`/admin/${agent._id}`}>
+                    <img src={agent.image} alt={agent.name}></img>{" "}
+                  </Link>
                 </td>
                 <td>{agent.name}</td>
                 <td>{agent.email}</td>

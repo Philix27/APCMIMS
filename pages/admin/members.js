@@ -5,17 +5,6 @@ import AgentsComp from "../../comps/member";
 import axios from "axios";
 
 export default function MembersPage({ agentsList }) {
-  //   useEffect(() => {
-  //     if (!fetchUser()) {
-  //       router.push("/");
-  //       // console.log(fetchUser());
-  //     }
-  //   }, []);
-
-  //   function fetchUser() {
-  //     return JSON.parse(localStorage.getItem("user"));
-  //   }
-
   return (
     <div className="agentsWrapper">
       <Head>
@@ -28,7 +17,7 @@ export default function MembersPage({ agentsList }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const art = await axios.get("https://rxedu-api.vercel.app/api/v1/member");
   return {
     props: {

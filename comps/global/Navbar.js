@@ -18,7 +18,6 @@ export default function Navbar() {
 
         <label className="brand">APCMIMS</label>
         {/* <label className="brand">APCMIMS</label> */}
-
         <ul className={showNav ? "show" : ""}>
           <li
             className={_path == "/" ? "active" : ""}
@@ -38,12 +37,12 @@ export default function Navbar() {
           >
             <Link href="/contact">Contact</Link>
           </li>
-          <li
+          {/* <li
             onClick={() => setShowNav(!showNav)}
             className={_path == "/login" ? "active" : ""}
           >
             <Link href="/login">Login</Link>
-          </li>
+          </li> */}
           <li
             onClick={() => setShowNav(!showNav)}
             className={_path == "/admin" ? "active" : ""}
