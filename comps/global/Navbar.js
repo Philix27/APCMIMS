@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import Image from "next/image";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function Navbar() {
@@ -25,18 +24,18 @@ export default function Navbar() {
           >
             <Link href="/">Home</Link>
           </li>
-          <li
+          {/* <li
             onClick={() => setShowNav(!showNav)}
             className={_path == "/reg" ? "active" : ""}
           >
             <Link href="/reg">Registration</Link>
-          </li>
-          <li
+          </li> */}
+          {/* <li
             onClick={() => setShowNav(!showNav)}
             className={_path == "/contact" ? "active" : ""}
           >
             <Link href="/contact">Contact</Link>
-          </li>
+          </li> */}
           {/* <li
             onClick={() => setShowNav(!showNav)}
             className={_path == "/login" ? "active" : ""}
