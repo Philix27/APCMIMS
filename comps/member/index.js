@@ -1,6 +1,6 @@
 import React from "react";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
-import { FcApproval, FcDisapprove } from "react-icons/fc";
+import { ImProfile } from "react-icons/im";
 import { useState } from "react";
 import Axios from "axios";
 import { useRouter } from "next/router";
@@ -80,6 +80,7 @@ export default function AgentsComp({ agentsList }) {
               <th>Email</th>
               <th>State</th>
               <th>LGA</th>
+              <th>Profile</th>
               <th>Delete</th>
             </tr>
           </thead>
@@ -87,16 +88,19 @@ export default function AgentsComp({ agentsList }) {
             {agts.map((agent, index) => (
               <tr key={index}>
                 <td>{index + 1}.</td>
-                {/* <td onClick={() => _showModal(agent)}> */}
-                <td>
-                  <Link key={index} href={`/admin/${agent._id}`}>
-                    <img src={agent.image} alt={agent.name}></img>{" "}
-                  </Link>
+
+                <td onClick={() => _showModal(agent)}>
+                  <img src={agent.image} alt={agent.name}></img>
                 </td>
                 <td>{agent.name}</td>
                 <td>{agent.email}</td>
                 <td>{agent.state}</td>
                 <td>{agent.lga}</td>
+                <td>
+                  <Link href={`/admin/${agent._id}`}>
+                    <ImProfile className="red icon" />
+                  </Link>
+                </td>
                 <td>
                   <a onClick={() => onDelete(agent)}>
                     <AiFillDelete className="red icon" />

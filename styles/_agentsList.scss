@@ -2,6 +2,9 @@
   // padding: 0 40px;
   margin: 0 auto;
   max-width: 80vw;
+  a {
+    color: $primaryColor;
+  }
   .agentModal {
     display: flex;
     flex-direction: row;
