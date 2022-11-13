@@ -70,6 +70,10 @@ export default function Form5({
           </h2>
           <hr />
           <h2>
+            NIN: <span> {agent.nin}</span>
+          </h2>
+          <hr />
+          <h2>
             Occupation: <span> {agent.occupation}</span>
           </h2>
           <hr />

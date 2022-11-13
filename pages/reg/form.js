@@ -111,8 +111,8 @@ export default function AddAgentsPage({ title }) {
           console.log("Hurray! we have a file");
           // console.log(_file);
         } else {
-          // value = "";
-          // console.log(_file);
+          // value = null;
+          // setProfileImage(null);
           alert("Image is above 1MB");
         }
       } else {

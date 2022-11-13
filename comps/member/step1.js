@@ -40,7 +40,7 @@ export default function Form1({
             placeholder="First name "
             name="firstName"
             required
-            minLength={5}
+            // minLength={5}
             value={agent.firstName}
             onChange={handleChange}
           />
@@ -55,7 +55,7 @@ export default function Form1({
             placeholder="Last name &  middle name"
             name="lastName"
             required
-            minLength={5}
+            // minLength={5}
             value={agent.lastName}
             onChange={handleChange}
           />
