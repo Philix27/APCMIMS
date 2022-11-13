@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { motion } from "framer-motion";
+// import { file } from "pdfkit";
 
 export default function Form5({
   agent,
@@ -8,9 +9,12 @@ export default function Form5({
   handleChange,
   handlePrev,
   handleSubmit,
+  profileImage,
+  setPreviewimage,
 }) {
   const styleHide = "hide";
   const styleShow = "show";
+
   return (
     <motion.div
       className={`sect step2 ${stepIndex === 4 ? styleShow : styleHide}`}
@@ -24,6 +28,8 @@ export default function Form5({
         </h2>
 
         <div className="content">
+          <img src={profileImage} alt="Selected image" />
+          {/* <img src={profileImage.name} alt="Selected image" /> */}
           <h2>
             Name:
             <span>
@@ -74,10 +80,10 @@ export default function Form5({
           <h2>
             Marital Status: <span> {agent.maritalStatus}</span>
           </h2>
-          <hr />
+          {/* <hr />
           <h2>
             Image: <span> {agent.image}</span>
-          </h2>
+          </h2> */}
         </div>
       </div>
       <div className="btnContainer">

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/router";
 import Axios from "axios";
 import { data } from "../../constants/all";
@@ -14,6 +14,8 @@ import Form5 from "../../comps/member/step5";
 import Form6 from "../../comps/member/step6";
 import { AlertSuccessful } from "../../comps/member/alert";
 import { Circles } from "react-loader-spinner";
+import { resolve } from "path";
+import { rejects } from "assert";
 
 export default function AddAgentsPage({ title }) {
   const router = useRouter();
@@ -28,6 +30,7 @@ export default function AddAgentsPage({ title }) {
     userType: "",
   });
 
+  const [previewImage, setPreviewimage] = useState("");
   const [showModal, setShowModal] = useState(true);
   const [agentTypeList, setAgentTypeList] = useState([]);
   const [isSuccessful, setIsSuccessful] = useState(false);
@@ -56,6 +59,7 @@ export default function AddAgentsPage({ title }) {
     state: "",
     lga: "",
     ward: "",
+    nin: "",
     votersRegNo: "",
     occupation: "",
     dateOfBirth: "",
@@ -83,7 +87,7 @@ export default function AddAgentsPage({ title }) {
       });
   }
 
-  const handleChange = (e) => {
+  const handleChange = async (e) => {
     const name = e.target.name;
     const value = e.target.value;
 
@@ -101,12 +105,15 @@ export default function AddAgentsPage({ title }) {
     } else if (name == "image") {
       const _file = e.target.files[0];
       if (_file) {
-        if (_file.size < 5000000) {
+        if (_file.size < 1000000) {
           setProfileImage(_file);
+          handleConversion(_file);
           console.log("Hurray! we have a file");
+          // console.log(_file);
         } else {
-          console.log(_file);
-          alert("Image is above 5MB");
+          // value = "";
+          // console.log(_file);
+          alert("Image is above 1MB");
         }
       } else {
         console.log("no file yet");
@@ -161,6 +168,7 @@ export default function AddAgentsPage({ title }) {
       agent.votersRegNo &&
       agent.occupation &&
       agent.dateOfBirth &&
+      agent.nin &&
       agent.maritalStatus
     ) {
       e.preventDefault();
@@ -172,7 +180,27 @@ export default function AddAgentsPage({ title }) {
       console.log("Something is missing");
     }
   };
-
+  const handleConversion = useCallback(async (_file) => {
+    const base64 = await convertToBase64(_file);
+    setPreviewimage(base64);
+    // console.log(base64);
+  });
+  const convertToBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      if (!file) {
+        alert("Please select an image");
+      } else {
+        fileReader.readAsDataURL(file);
+        fileReader.onload = () => {
+          resolve(fileReader.result);
+        };
+      }
+      fileReader.onerror = (error) => {
+        reject(error);
+      };
+    });
+  };
   return (
     <div className="addAgent">
       <div className="section formsPage">
@@ -228,6 +256,8 @@ export default function AddAgentsPage({ title }) {
           handleChange={handleChange}
           handlePrev={handlePrev}
           handleNext={handleNext}
+          profileImage={previewImage}
+          setPreviewimage={setPreviewimage}
         />
         <Form6
           agent={agent}

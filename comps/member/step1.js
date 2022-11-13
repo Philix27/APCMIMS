@@ -84,8 +84,8 @@ export default function Form1({
             type="number"
             required
             id="form-phone"
-            minLength={11}
-            maxLength={15}
+            // minLength={11}
+            maxLength={11}
             placeholder="e.g 08101234567"
             name="phone"
             value={agent.phone}
@@ -99,8 +99,7 @@ export default function Form1({
           <input
             type="number"
             id="form-phone"
-            minLength={11}
-            maxLength={15}
+            maxLength={11}
             placeholder="e.g Optional"
             name="alternatePhone"
             value={agent.alternatePhone}

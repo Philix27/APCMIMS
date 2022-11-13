@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 export default function Form3({
   agent,
   stepIndex,
-  agentParams,
   handlePrev,
   handleNext,
   handleChange,
@@ -30,6 +29,22 @@ export default function Form3({
             placeholder="Enter Voters Reg"
             name="votersRegNo"
             value={agent.votersRegNo}
+            required
+            maxLength={15}
+            // minLength={3}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="input_box">
+          <label htmlFor="form-nin" className="label">
+            National Identity Number (NIN)
+          </label>
+          <input
+            type="text"
+            id="form-nin"
+            placeholder="NIN"
+            name="nin"
+            value={agent.nin}
             required
             maxLength={15}
             // minLength={3}
