@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <Landing
-        title="APC Members"
+        title="Become a member"
         imgUrl="images/bg.jpg"
         subtitle="JUSTICE, PEACE & UNITY"
         opacity={0.45}

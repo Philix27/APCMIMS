@@ -12,8 +12,8 @@ export default function Objectives() {
         ID card in hand. Helping Associations with members all around the
         country promoting the party.
       </div>
-      <Link className="btn" href="/reg">
-        Become a member
+      <Link className="btn" href="/reg/form">
+        Register
       </Link>
     </div>
   );
