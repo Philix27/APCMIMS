@@ -97,21 +97,3 @@ export async function getServerSideProps(context) {
     },
   };
 }
-
-//  <div className="comp">
-//    <h3>
-//      <span>Name:</span> {userProfile.name}
-//    </h3>
-//    <h3>
-//      <span>Address:</span> {userProfile.address}
-//    </h3>
-//    <h3>
-//      <span>State:</span> {userProfile.state}
-//    </h3>
-//    <h3>
-//      <span>LGA:</span> {userProfile.lga}
-//    </h3>
-//    <h3>
-//      <span>Ward:</span> {userProfile.ward}
-//    </h3>
-//  </div>;
