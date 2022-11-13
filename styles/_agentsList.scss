@@ -4,6 +4,9 @@
   max-width: 80vw;
   a {
     color: $primaryColor;
+    &:hover {
+      color: #fff;
+    }
   }
   .agentModal {
     display: flex;

@@ -25,33 +25,62 @@ export default function MembersPage({ memberProfile }) {
   }, {});
 
   return (
-    <div className="section">
+    <div className="profilePage">
       <Head>
         <title>APCMIMS | Profile</title>
       </Head>
       <br />
-      {memberProfile.name ? (
-        <div className="comp">
-          <h3>
-            <span>Name:</span> {userProfile.name}
-          </h3>
-          <h3>
-            <span>Address:</span> {userProfile.address}
-          </h3>
-          <h3>
-            <span>State:</span> {userProfile.state}
-          </h3>
-          <h3>
-            <span>LGA:</span> {userProfile.lga}
-          </h3>
-          <h3>
-            <span>Ward:</span> {userProfile.ward}
-          </h3>
+      {memberProfile ? (
+        <div className="preview">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Info</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>First Name</td>
+                <td>
+                  {userProfile.firstName} {userProfile.name}
+                </td>
+              </tr>
+              <tr>
+                <td>Last Name</td>
+                <td>{userProfile.lastName}</td>
+              </tr>
+              <tr>
+                <td>Email</td>
+                <td>{userProfile.email}</td>
+              </tr>
+              <tr>
+                <td>Phone</td>
+                <td>{userProfile.phone}</td>
+              </tr>
+              <tr>
+                <td>Address</td>
+                <td>{userProfile.address}</td>
+              </tr>
+              <tr>
+                <td>State</td>
+                <td>{userProfile.state}</td>
+              </tr>
+              <tr>
+                <td>LGA</td>
+                <td>{userProfile.lga}</td>
+              </tr>
+              <tr>
+                <td>Ward</td>
+                <td>{userProfile.ward}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       ) : (
         <LoadingIndicator />
       )}
-      <div className="btn">Print</div>
+      <div className="btn">Print Membership Card</div>
     </div>
   );
 }
@@ -68,3 +97,21 @@ export async function getServerSideProps(context) {
     },
   };
 }
+
+//  <div className="comp">
+//    <h3>
+//      <span>Name:</span> {userProfile.name}
+//    </h3>
+//    <h3>
+//      <span>Address:</span> {userProfile.address}
+//    </h3>
+//    <h3>
+//      <span>State:</span> {userProfile.state}
+//    </h3>
+//    <h3>
+//      <span>LGA:</span> {userProfile.lga}
+//    </h3>
+//    <h3>
+//      <span>Ward:</span> {userProfile.ward}
+//    </h3>
+//  </div>;

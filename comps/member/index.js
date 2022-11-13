@@ -17,9 +17,16 @@ export default function AgentsComp({ agentsList }) {
     const searchTerm = e.target.value;
     const tempList = [];
     // console.log(agentsList.data);
-    tempList = agentsList.data.filter((agent) =>
-      agent.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+
+    tempList = agentsList.data.filter((agent) => {
+      const names = `{agent.firstName} {agent.lastName}`;
+      if (agent.name) {
+        return agent.name.toLowerCase().includes(searchTerm.toLowerCase());
+      } else {
+        return names.toLowerCase().includes(searchTerm.toLowerCase());
+      }
+    });
+
     console.log(agts);
     setAgents(tempList);
   };
@@ -92,7 +99,9 @@ export default function AgentsComp({ agentsList }) {
                 <td onClick={() => _showModal(agent)}>
                   <img src={agent.image} alt={agent.name}></img>
                 </td>
-                <td>{agent.name}</td>
+                <td>
+                  {agent.firstName} {agent.lastName} {agent.name}
+                </td>
                 <td>{agent.email}</td>
                 <td>{agent.state}</td>
                 <td>{agent.lga}</td>

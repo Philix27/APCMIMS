@@ -37,6 +37,11 @@
     color: #fff;
     font-weight: 600;
   }
+  table tr:hover a {
+    // background-color: $primaryColor;
+    color: #fff;
+    font-weight: 600;
+  }
 
   tr:nth-of-type(even) {
     background-color: $secondaryColor;
