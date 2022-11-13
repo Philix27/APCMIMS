@@ -41,7 +41,7 @@ export default function ProfilePage({ agentsList }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const art = await axios.get("https://rxedu-api.vercel.app/api/v1/member");
   return {
     props: {
