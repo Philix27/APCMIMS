@@ -77,7 +77,7 @@ export default function Membership({
                 <hr />
                 {/* <p className="red">Get Approved</p> */}
                 <Link
-                  href="https://paystack.com/pay/ee68wwo6dd"
+                  href="https://paystack.com/pay/9z90w2jv7z"
                   target="_blank"
                   className="btn"
                 >
