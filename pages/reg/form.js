@@ -66,6 +66,8 @@ export default function AddAgentsPage({ title }) {
     maritalStatus: "",
     image: "",
     status: "NEW",
+    isApproved: false,
+    registrationDate: new Date(),
   });
 
   function postAgent(agent) {

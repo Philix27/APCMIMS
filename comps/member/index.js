@@ -15,7 +15,7 @@ export default function AgentsComp({ agentsList }) {
 
   const onSearch = (e) => {
     const searchTerm = e.target.value;
-    const tempList = [];
+    var tempList = [];
     // console.log(agentsList.data);
 
     tempList = agentsList.data.filter((agent) => {

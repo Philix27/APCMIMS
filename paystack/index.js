@@ -1,5 +1,4 @@
 import React from "react";
-// import logo from "./logo.svg";
 import { PaystackButton } from "react-paystack";
 
 const config = {
@@ -10,13 +9,11 @@ const config = {
 };
 
 export function Payer() {
-  // you can call this function anything
   const handlePaystackSuccessAction = (reference) => {
     // Implementation for whatever you want to do with reference and after success call.
     console.log(reference);
   };
 
-  // you can call this function anything
   const handlePaystackCloseAction = () => {
     // implementation for  whatever you want to do when the Paystack dialog closed.
     console.log("closed");
@@ -24,28 +21,10 @@ export function Payer() {
 
   const componentProps = {
     ...config,
-    text: "Paystack Button Implementation",
+    text: "Pay",
     onSuccess: (reference) => handlePaystackSuccessAction(reference),
     onClose: handlePaystackCloseAction,
   };
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src="/images/logo.png" className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <PaystackButton {...componentProps} />
-    </div>
-  );
+  return <PaystackButton {...componentProps} className="btn" />;
 }

@@ -5,4 +5,42 @@
     flex-direction: row;
     justify-content: center;
   }
+  .userInfo {
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0px;
+    box-shadow: 3px 6px 8px 0px rgba(0, 0, 0, 0.29);
+    border-radius: 10px;
+    margin: 15px;
+    div {
+      padding: 20px;
+    }
+
+    &:hover {
+      background-color: $primaryColor;
+      color: #fff;
+      .clickable {
+        background-color: $secondaryColor;
+        color: $primaryColor;
+      }
+    }
+
+    .clickable {
+      // background-color: $primaryColor;
+      // color: #fff;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    @include tabletSS {
+      grid-template-columns: repeat(2, 1fr);
+      margin: 10px;
+      padding: 15px;
+    }
+    @include mobileSS {
+      grid-template-columns: repeat(1, 1fr);
+      margin: 10px;
+      padding: 15px;
+    }
+  }
 }

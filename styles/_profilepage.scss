@@ -7,9 +7,8 @@
   min-height: 75vh;
   padding-top: 50px 20px 50px 20px;
   background-image: linear-gradient(
-      rgba(67, 89, 102, 0.5),
-      rgba(149, 178, 195, 0.3),
-      rgba(67, 89, 102, 0.5)
+      rgba(24, 37, 45, 0.4),
+      rgba(44, 66, 79, 0.6)
     ),
     url(../public/images/logo.png);
 
@@ -29,6 +28,10 @@
     border-radius: 20px 20px 5px 5px;
     // overflow: hidden;
     // box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    // @include mobileSS {
+    //   margin-top: 30px;
+    // }
   }
 
   table tr th {
@@ -48,7 +51,9 @@
     color: #fff;
     font-weight: 300;
   }
-
+  tr {
+    background-color: $background1;
+  }
   tr:nth-of-type(even) {
     background-color: $secondaryColor;
   }
