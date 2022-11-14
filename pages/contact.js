@@ -48,7 +48,7 @@ export default function Contact() {
                 // cols="40"
                 rows="10"
                 // minLength={5}
-                multiline
+                // multiline
 
                 // value={agent.email}
                 // onChange={handleChange}
