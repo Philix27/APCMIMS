@@ -29,6 +29,7 @@
 @import "preview";
 @import "admin";
 @import "profilepage";
+@import "membership";
 
 :root {
   // --fontFamily: "Roboto", sans-serif;
@@ -83,4 +84,8 @@ body {
       padding-left: 0;
     }
   }
+}
+
+.agentsWrapper {
+  min-height: 80vh;
 }

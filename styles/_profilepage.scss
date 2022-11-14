@@ -6,17 +6,17 @@
   // width: 50vw;
   min-height: 75vh;
   padding-top: 50px 20px 50px 20px;
-  // margin: 10px auto;
-  // background-color: rgb(46, 114, 174);
+  background-image: linear-gradient(
+      rgba(67, 89, 102, 0.5),
+      rgba(149, 178, 195, 0.3),
+      rgba(67, 89, 102, 0.5)
+    ),
+    url(../public/images/logo.png);
 
   .comp {
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.381);
+    // box-shadow: 0 5px 10px rgba(0, 0, 0, 0.381);
     padding: 20px;
-    background-image: linear-gradient(
-        rgba(9, 106, 163, 0.391),
-        rgba(2, 4, 14, 0.358)
-      ),
-      url(../public/images/bg.jpg);
+
     h3 {
       font-weight: 900;
     }

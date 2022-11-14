@@ -183,7 +183,7 @@ export default function AddAgentsPage({ title }) {
   const handleConversion = useCallback(async (_file) => {
     const base64 = await convertToBase64(_file);
     setPreviewimage(base64);
-    // console.log(base64);
+    console.log(base64);
   });
   const convertToBase64 = (file) => {
     return new Promise((resolve, reject) => {

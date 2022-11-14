@@ -74,7 +74,7 @@ export default function AgentsComp({ agentsList }) {
         <div className="input">
           <input
             type="search"
-            placeholder="Search for an agent"
+            placeholder="Search for a member"
             onChange={onSearch}
           />
         </div>

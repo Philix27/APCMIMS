@@ -9,7 +9,7 @@ export default function MembersPage({ memberProfile }) {
   const router = useRouter();
   const { id } = router.query;
   const [userProfile, setUserProfile] = useState({});
-
+  console.log(memberProfile);
   useEffect(() => {
     axios
       .get(`https://rxedu-api.vercel.app/api/v1/member/${id}`)
@@ -41,6 +41,12 @@ export default function MembersPage({ memberProfile }) {
             </thead>
             <tbody>
               <tr>
+                <td>Photo</td>
+                <td>
+                  <img src={userProfile.image} alt="Profile Photo" />
+                </td>
+              </tr>
+              <tr>
                 <td>First Name</td>
                 <td>
                   {userProfile.firstName} {userProfile.name}
@@ -59,6 +65,14 @@ export default function MembersPage({ memberProfile }) {
                 <td>{userProfile.phone}</td>
               </tr>
               <tr>
+                <td>Alt Phone</td>
+                <td>{userProfile.alternatePhone}</td>
+              </tr>
+              <tr>
+                <td>Date of Birth</td>
+                <td>{userProfile.dateOfBirth}</td>
+              </tr>
+              <tr>
                 <td>Address</td>
                 <td>{userProfile.address}</td>
               </tr>
@@ -73,6 +87,26 @@ export default function MembersPage({ memberProfile }) {
               <tr>
                 <td>Ward</td>
                 <td>{userProfile.ward}</td>
+              </tr>
+              <tr>
+                <td>Martital Status</td>
+                <td>{userProfile.maritalStatus}</td>
+              </tr>
+              <tr>
+                <td>NIN</td>
+                <td>{userProfile.nin}</td>
+              </tr>
+              <tr>
+                <td>Occupation</td>
+                <td>{userProfile.occupation}</td>
+              </tr>
+              <tr>
+                <td>Voters Reg. No.</td>
+                <td>{userProfile.votersRegNo}</td>
+              </tr>
+              <tr>
+                <td>ID</td>
+                <td>{userProfile._id}</td>
               </tr>
             </tbody>
           </table>
@@ -97,3 +131,14 @@ export async function getServerSideProps(context) {
     },
   };
 }
+
+image: "https://firebasestorage.googleapis.com/v0/b/delsu-learn.appspot.com/o/apcaims%2FONOJA%20E.%20OCHE%20PASSPORT.jpg2539d15d-d9f7-4ed3-8f95-e48e43ce14ca?alt=media&token=369d893f-ef03-444e-9887-dd3cb3e37f6a";
+lastName: "ONOJA";
+lga: "ARGUNGU";
+maritalStatus: "married";
+nin: "123454678904356";
+occupation: "business";
+phone: "08064474211";
+state: "KEBBI";
+votersRegNo: "123344556789021";
+ward: "KOKANI SOUTH";
