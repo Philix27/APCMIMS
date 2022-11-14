@@ -32,7 +32,7 @@ export default function AgentsComp({ agentsList }) {
   };
 
   const onDelete = (agent) => {
-    Axios.delete(`https://rxedu-api.vercel.app/api/v1/member/${agent._id}`)
+    Axios.delete(`https://rxedu-api.vercel.app/api/v1/member/${agent.nin}`)
       .then((response) => {
         setIsSuccessful(true);
         alert("Deleted Successfully");
