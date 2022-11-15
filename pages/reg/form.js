@@ -73,10 +73,7 @@ export default function AddAgentsPage({ title }) {
   function postAgent(agent) {
     Axios.post("https://rxedu-api.vercel.app/api/v1/member", agent)
       .then((response) => {
-        // setIsSuccessful(true);
         console.log("Successfully Sent to: ");
-        // alert("Successfully Added");
-
         setTimeout(() => {
           setIsSuccessful(false);
           router.push("/thanks");

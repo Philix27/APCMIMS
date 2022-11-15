@@ -7,17 +7,17 @@ import LoadingIndicator from "../../comps/global/LoadingIndicator";
 
 export default function MembersPage({ memberProfile }) {
   const router = useRouter();
-  const { id } = router.query;
+  const { nin } = router.query;
   const [userProfile, setUserProfile] = useState({});
   console.log(memberProfile);
   useEffect(() => {
     axios
-      .get(`https://rxedu-api.vercel.app/api/v1/member/${id}`)
+      .get(`https://rxedu-api.vercel.app/api/v1/member/${nin}`)
       .then((response) => {
         setUserProfile(response.data.doc);
         console.log("Working");
-        console.log(response.data.doc);
-        console.log(`Length: ${response}`);
+        // console.log(response.data.doc);
+        // console.log(`Length: ${response}`);
       })
       .catch(() => {
         console.log("Opps an error ocured - Local");
@@ -122,7 +122,7 @@ export default function MembersPage({ memberProfile }) {
 export async function getServerSideProps(context) {
   const { query } = context;
   const art = await axios.get(
-    `https://rxedu-api.vercel.app/api/v1/member/${query.id}`
+    `https://rxedu-api.vercel.app/api/v1/member/${query.nin}`
   );
   return {
     props: {
@@ -131,14 +131,3 @@ export async function getServerSideProps(context) {
     },
   };
 }
-
-image: "https://firebasestorage.googleapis.com/v0/b/delsu-learn.appspot.com/o/apcaims%2FONOJA%20E.%20OCHE%20PASSPORT.jpg2539d15d-d9f7-4ed3-8f95-e48e43ce14ca?alt=media&token=369d893f-ef03-444e-9887-dd3cb3e37f6a";
-lastName: "ONOJA";
-lga: "ARGUNGU";
-maritalStatus: "married";
-nin: "123454678904356";
-occupation: "business";
-phone: "08064474211";
-state: "KEBBI";
-votersRegNo: "123344556789021";
-ward: "KOKANI SOUTH";

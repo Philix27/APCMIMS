@@ -32,7 +32,7 @@ export default function AgentsComp({ agentsList }) {
   };
 
   const onDelete = (agent) => {
-    Axios.delete(`https://rxedu-api.vercel.app/api/v1/member/${agent.nin}`)
+    Axios.delete(`https://rxedu-api.vercel.app/api/v1/member/${agent._id}`)
       .then((response) => {
         setIsSuccessful(true);
         alert("Deleted Successfully");
@@ -68,9 +68,7 @@ export default function AgentsComp({ agentsList }) {
       )} */}
       <div className="tableSection">
         <br />
-        <br />
-        <br />
-        <br />
+
         <div className="input">
           <input
             type="search"
@@ -106,8 +104,8 @@ export default function AgentsComp({ agentsList }) {
                 <td>{agent.state}</td>
                 <td>{agent.lga}</td>
                 <td>
-                  <Link href={`/admin/${agent._id}`}>
-                    <ImProfile className="red icon" />
+                  <Link href={`/admin/${agent.nin}`}>
+                    <ImProfile className="icon" />
                   </Link>
                 </td>
                 <td>
