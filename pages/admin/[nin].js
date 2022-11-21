@@ -4,26 +4,58 @@ import Head from "next/head";
 import AgentsComp from "../../comps/member";
 import axios from "axios";
 import LoadingIndicator from "../../comps/global/LoadingIndicator";
+import { config } from "process";
 
 export default function MembersPage({ memberProfile }) {
   const router = useRouter();
   const { nin } = router.query;
   const [userProfile, setUserProfile] = useState({});
-  console.log(memberProfile);
+  // console.log(memberProfile);
+
   useEffect(() => {
     axios
       .get(`https://rxedu-api.vercel.app/api/v1/member/${nin}`)
       .then((response) => {
         setUserProfile(response.data.doc);
-        console.log("Working");
-        // console.log(response.data.doc);
-        // console.log(`Length: ${response}`);
+        // console.log("Working");
       })
       .catch(() => {
         console.log("Opps an error ocured - Local");
       });
-  }, {});
+  }, []);
 
+  const handlePrint = async () => {
+    console.log("Handle Print Clicked");
+    const data = {
+      name: userProfile.firstName,
+      email: userProfile.email,
+      state_code: userProfile.nin,
+      state: userProfile.state,
+      lga: userProfile.lga,
+      ward: userProfile.ward,
+    };
+    // data = JSON.stringify(data);
+    console.log(data);
+    // axios
+    //   .post("http://localhost:8000/pdf", data)
+    //   // .post("http://localhost:8000/pdfgen")
+    //   .catch((e) => {
+    //     console.log("Opps an error ocured - Local");
+    //     console.log(e);
+    //   });
+
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/pdf" },
+      body: data,
+    };
+    fetch("http://localhost:8000/pdf", requestOptions)
+      .then((response) => response.json())
+      .catch((e) => {
+        console.log("Opps an error ocured - Local");
+        console.log(e);
+      });
+  };
   return (
     <div className="profilePage">
       <Head>
@@ -114,7 +146,9 @@ export default function MembersPage({ memberProfile }) {
       ) : (
         <LoadingIndicator />
       )}
-      <div className="btn">Print Membership Card</div>
+      <a className="btn" onClick={() => handlePrint()}>
+        Print Membership Card --
+      </a>
     </div>
   );
 }
