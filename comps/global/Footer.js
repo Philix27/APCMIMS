@@ -52,7 +52,6 @@ export default function Footer() {
         </ul>
       </div>
       <div className="copyright">
-        {/* <p>Copyright &copy;.</p> */}
         <p>2022 Copyright &copy; All Rights Reserved</p>
       </div>
     </div>
