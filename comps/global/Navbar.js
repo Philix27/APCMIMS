@@ -24,30 +24,13 @@ export default function Navbar() {
           >
             <Link href="/">Home</Link>
           </li>
+
           {/* <li
-            onClick={() => setShowNav(!showNav)}
-            className={_path == "/reg" ? "active" : ""}
-          >
-            <Link href="/reg">Registration</Link>
-          </li> */}
-          {/* <li
-            onClick={() => setShowNav(!showNav)}
-            className={_path == "/contact" ? "active" : ""}
-          >
-            <Link href="/contact">Contact</Link>
-          </li> */}
-          {/* <li
-            onClick={() => setShowNav(!showNav)}
-            className={_path == "/login" ? "active" : ""}
-          >
-            <Link href="/login">Login</Link>
-          </li> */}
-          <li
             onClick={() => setShowNav(!showNav)}
             className={_path == "/admin" ? "active" : ""}
           >
             <Link href="/admin">Admin</Link>
-          </li>
+          </li> */}
         </ul>
         <label className="icon">
           {showNav ? (
