@@ -12,10 +12,12 @@ import Form3 from "../../comps/member/step3";
 import Form4 from "../../comps/member/step4";
 import Form5 from "../../comps/member/step5";
 import Form6 from "../../comps/member/step6";
+import Form7 from "../../comps/member/step7";
 import { AlertSuccessful } from "../../comps/member/alert";
 import { Circles } from "react-loader-spinner";
 import { resolve } from "path";
 import { rejects } from "assert";
+import { usePaystackPayment } from "react-paystack";
 
 export default function AddAgentsPage({ title }) {
   const router = useRouter();
@@ -87,8 +89,8 @@ export default function AddAgentsPage({ title }) {
   }
 
   const handleChange = async (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
+    var name = e.target.name;
+    var value = e.target.value;
 
     if (name == "state") {
       setWards([]);
@@ -117,6 +119,18 @@ export default function AddAgentsPage({ title }) {
       } else {
         console.log("no file yet");
       }
+    }
+    if (name == "phone") {
+      if (value.length > 11) value = value.slice(0, 11);
+    }
+    if (name == "alternatePhone") {
+      if (value.length > 11) value = value.slice(0, 11);
+    }
+    if (name == "nin") {
+      if (value.length > 11) value = value.slice(0, 11);
+    }
+    if (name == "votersRegNo") {
+      if (value.length > 17) value = value.slice(0, 17);
     }
 
     setAgent({ ...agent, [name]: value });
@@ -154,7 +168,7 @@ export default function AddAgentsPage({ title }) {
     }
   }
 
-  const handleSubmit = async (e) => {
+  const validateForm = async (e) => {
     if (
       agent.firstName &&
       agent.lastName &&
@@ -172,13 +186,15 @@ export default function AddAgentsPage({ title }) {
     ) {
       e.preventDefault();
       agent.maritalStatus.toUpperCase();
-      console.log("Before Upload");
-      setStepIndex(5);
+      // console.log("Before Upload");
+      setStepIndex(stepIndex + 1);
       uploadImageToFb();
     } else {
+      setShowErrorMsg(true);
       console.log("Something is missing");
     }
   };
+
   const handleConversion = useCallback(async (_file) => {
     const base64 = await convertToBase64(_file);
     setPreviewimage(base64);
@@ -241,7 +257,7 @@ export default function AddAgentsPage({ title }) {
         <Form4
           agent={agent}
           stepIndex={stepIndex}
-          handleSubmit={handleSubmit}
+          // handleSubmit={handleSubmit}
           agentParams={agentParams}
           handleChange={handleChange}
           handlePrev={handlePrev}
@@ -250,7 +266,7 @@ export default function AddAgentsPage({ title }) {
         <Form5
           agent={agent}
           stepIndex={stepIndex}
-          handleSubmit={handleSubmit}
+          // handleSubmit={handleSubmit}
           agentParams={agentParams}
           handleChange={handleChange}
           handlePrev={handlePrev}
@@ -261,7 +277,18 @@ export default function AddAgentsPage({ title }) {
         <Form6
           agent={agent}
           stepIndex={stepIndex}
-          handleSubmit={handleSubmit}
+          // handleSubmit={handleSubmit}
+          agentParams={agentParams}
+          handleChange={handleChange}
+          handlePrev={handlePrev}
+          handleNext={handleNext}
+          profileImage={previewImage}
+          setPreviewimage={setPreviewimage}
+        />
+        <Form7
+          agent={agent}
+          stepIndex={stepIndex}
+          // handleSubmit={handleSubmit}
           agentParams={agentParams}
           handleChange={handleChange}
           handlePrev={handlePrev}

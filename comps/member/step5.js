@@ -11,6 +11,7 @@ export default function Form5({
   handleSubmit,
   profileImage,
   setPreviewimage,
+  validateForm,
 }) {
   const styleHide = "hide";
   const styleShow = "show";
@@ -102,8 +103,8 @@ export default function Form5({
         <div className="buttons">
           <input
             type="submit"
-            value="Submit"
-            onClick={handleSubmit}
+            value="Next"
+            onClick={validateForm}
             className="btn"
           />
         </div>
