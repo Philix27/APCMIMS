@@ -1,0 +1,53 @@
+@import "../colors";
+@import "../screensize";
+
+.formsPage {
+  .gridContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 40px 12%;
+    align-self: center;
+    align-content: center;
+
+    @include tabletSS {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 2rem;
+      padding-bottom: 0;
+    }
+
+    @include mobileSS {
+      grid-template-columns: repeat(1, 1fr);
+      padding: 2rem;
+      padding-bottom: 0;
+    }
+
+    .card {
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-items: center;
+      text-align: center;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      cursor: pointer;
+
+      img {
+        // width: 250px;
+        // display: none;
+        width: 100%;
+        object-fit: contain;
+      }
+
+      h4 {
+        line-height: 40px;
+        text-align: center;
+        align-items: center;
+      }
+      p {
+        padding-bottom: 20px;
+      }
+    }
+  }
+}

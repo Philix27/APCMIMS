@@ -25,12 +25,12 @@ export default function Navbar() {
             <Link href="/">Home</Link>
           </li>
 
-          {/* <li
+          <li
             onClick={() => setShowNav(!showNav)}
-            className={_path == "/admin" ? "active" : ""}
+            className={_path == "/forms" ? "active" : ""}
           >
-            <Link href="/admin">Admin</Link>
-          </li> */}
+            <Link href="/forms">Forms</Link>
+          </li>
         </ul>
         <label className="icon">
           {showNav ? (
